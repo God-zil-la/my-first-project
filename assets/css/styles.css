@@ -214,16 +214,16 @@ button:hover { /* Hover effect */
 
         /* Ensures footer text is black even on small screens */
         footer * {  /* Footer text color */ 
-            color: black !important; /* Ensures black text */
-        }
+            color: black !important; /* Ensures black text */ 
+        }     
 /*övergång fadeout i kontakt formulär till hem*/
-@keyframes fadeOutIn {                   
-    0% { opacity: 1; }      
-    50% { opacity: 0; }       
-    100% { opacity: 1; }  
+@keyframes fadeOutIn { /* Fade out and in animation */         
+    0% { opacity: 1; }   /* Visible by default */       
+    50% { opacity: 0; }  /* Hidden at 50% */      
+    100% { opacity: 1; }   /* Visible at the end */
   }
   
-  .fade-transition {  
-    animation: fadeOutIn 1s ease-in-out;   
+  .fade-transition {   /* Fade transition class */
+    animation: fadeOutIn 1s ease-in-out;       /* Apply animation */
   }
-    }
+    }  
