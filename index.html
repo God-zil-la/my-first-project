@@ -134,7 +134,7 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
  'contact': `
             <h1>Kontakta mig</h1>
             <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p>
-            <form id="contactForm" action="https://formspree.io/f/YOUR_ID_HERE" method="POST" onsubmit="return showConfirmation()">
+            <form id="contactForm" onsubmit="return showConfirmation();">
               <label for="name">Namn:</label>
               <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\\s-]+" minlength="2" title="Endast bokstäver tillåtna" />
               <label for="email">E-post:</label>
@@ -143,7 +143,6 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
               <textarea id="message" name="message" rows="4" required></textarea>
               <label for="captcha">Vad blir 3 + 4? (SPAM-kontroll)</label>
               <input type="text" id="captcha" required />
-              <input type="hidden" name="_autoresponse" value="Tack för ditt meddelande! Vi återkommer så snart vi kan.">
               <button type="submit">Skicka</button>
             </form>
             <div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;">
@@ -165,8 +164,10 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
       document.getElementById("confirmation").style.display = "block";
       setTimeout(() => {
         document.getElementById("confirmation").style.display = "none";
+        document.getElementById("contactForm").reset();
+        showPage('home');
       }, 5000);
-      return true;
+      return false; // Hindrar att formuläret skickas till server
     }
 
     document.addEventListener("DOMContentLoaded", function () {
