@@ -35,7 +35,7 @@ This website can be deployed both **locally** for testing and **online** for bro
 ### Local Deployment:
 1. **Download or Clone the Repository:**
    - Use Git to clone the repository:
-     ```sh
+   ```sh
      git clone https://github.com/yourusername/3d-printing-website.git
      ```
    - Alternatively, download the project as a ZIP file and extract it.
