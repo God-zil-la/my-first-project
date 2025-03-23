@@ -159,23 +159,33 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
       }
 
       function showConfirmation() {
-        const captcha = document.getElementById("captcha").value.trim();
-        if (captcha !== "7") {
-          alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
-          return false;
-        }
-        document.getElementById("confirmation").style.display = "block";
-        setTimeout(() => {
-          document.getElementById("confirmation").style.display = "none";
-          document.getElementById("contactForm").reset();
-          showPage("home");
-        }, 2000); /*antal sekunder som bekräftelsen visas*/
-        return false; // Hindrar att formuläret skickas till server
+  const captcha = document.getElementById("captcha").value.trim();
+  if (captcha !== "7") {
+    alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
+    return false;
+  }
+
+  document.getElementById("confirmation").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("confirmation").style.display = "none";
+    document.getElementById("contactForm").reset();
+    document.getElementById("content").classList.add("fade-transition");
+    showPage('home');
+    setTimeout(() => {
+      document.getElementById("content").classList.remove("fade-transition");
+    }, 1000);
+  }, 2000);
+
+  return false; // Hindrar att formuläret skickas till server
       }
 
       document.addEventListener("DOMContentLoaded", function () {
         showPage("home"); /*återgår till huvudmenyn efter sekunderna*/
-      });
+        setTimeout(() => {
+    document.getElementById("content").classList.remove("fade-transition");
+}, 1000);  
+    });
     </script>
 
     <footer>
