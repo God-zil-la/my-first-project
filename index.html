@@ -136,62 +136,55 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
  `,
             contact: `
             <h1>Kontakta mig</h1>
-            <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p>
+            <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p> <!-- Kontaktformulär -->
             <form id="contactForm" onsubmit="return showConfirmation();"> <!-- Kan bytas ut till en fysisk server som tex formspree -->
-              <label for="name">Namn:</label>
-              <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\\s-]+" minlength="2" title="Endast bokstäver tillåtna" />
-              <label for="email">E-post:</label>
-              <input type="email" id="email" name="email" required />
-              <label for="message">Meddelande:</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-              <label for="captcha">Vad blir 3 + 4? (SPAM-kontroll)</label>
-              <input type="text" id="captcha" required />
-              <button type="submit">Skicka</button>
+              <label for="name">Namn:</label> <!-- Kräver minst 2 bokstäver -->
+              <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\\s-]+" minlength="2" title="Endast bokstäver tillåtna" /> <!-- Kräver minst 2 bokstäver -->
+              <label for="email">E-post:</label> <!-- Kräver en giltig e-postadress -->
+              <input type="email" id="email" name="email" required /> <!-- Kräver en giltig e-postadress -->
+              <label for="message">Meddelande:</label> 
+              <textarea id="message" name="message" rows="4" required></textarea> 
+              <label for="captcha">Vad blir 3 + 4? (SPAM-kontroll)</label> <!-- SPAM-kontroll -->
+              <input type="text" id="captcha" required /> <!-- SPAM-kontroll -->
+              <button type="submit">Skicka</button> <!-- Skicka formuläret -->
             </form>
-            <div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;">
-              ✅ Tack! Ditt meddelande har skickats.
-            </div>
-          `,
-          };
-          document.getElementById("content").innerHTML = content[page];
-          document.getElementById("content").style.opacity = "1";
-        }, 300);
+            <div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;"> <!-- Bekräftelsemeddelande -->
+              ✅ Tack! Ditt meddelande har skickats. <!-- Bekräftelsemeddelande -->
+                     </div>
+          `
+        };
+        document.getElementById("content").innerHTML = content[page];
+        document.getElementById("content").style.opacity = "1";
+      }, 300);
+    }
+
+    function showConfirmation() {
+      const captcha = document.getElementById("captcha").value.trim();
+      if (captcha !== "7") {
+        alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
+        return false;
       }
-
-      function showConfirmation() {
-  const captcha = document.getElementById("captcha").value.trim();
-  if (captcha !== "7") {
-    alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
-    return false;
-  }
-
-  document.getElementById("confirmation").style.display = "block";
-
-  setTimeout(() => {
-    document.getElementById("confirmation").style.display = "none";
-    document.getElementById("contactForm").reset();
-    document.getElementById("content").classList.add("fade-transition");
-    showPage('home');
-    setTimeout(() => {
-      document.getElementById("content").classList.remove("fade-transition");
-    }, 1000);
-  }, 2000);
-
-  return false; // Hindrar att formuläret skickas till server
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        showPage("home"); /*återgår till huvudmenyn efter sekunderna*/
+      document.getElementById("confirmation").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("confirmation").style.display = "none";
+        document.getElementById("contactForm").reset();
+        document.getElementById("content").classList.add("fade-transition");
+        showPage('home');
         setTimeout(() => {
-    document.getElementById("content").classList.remove("fade-transition");
-}, 1000);  
-    });
-    </script>
+          document.getElementById("content").classList.remove("fade-transition");
+        }, 1000);
+      }, 2000); /*antal sekunder som bekräftelsen visas*/
+      return false; // Hindrar att formuläret skickas till server
+    }
 
-    <footer>
-      <h5>&copy; 2024 3D-Printing Website. All rights reserved.</h5>
-      <h5>Adress: 3D-Tech Street 123, 12345 Lund, Sverige</h5>
-      <h5>Telefon: 070-1234567 | Måndag-Fredag 08:00-17:00</h5>
-    </footer>
-  </body>
-</html>
+    document.addEventListener("DOMContentLoaded", function () {
+      showPage('home');/*återgår till huvudmenyn efter sekunderna*/
+    });
+  </script>
+
+  <footer>
+    <h5>&copy; 2024 3D-Printing Website. All rights reserved.</h5>
+    <h5>Adress: 3D-Tech Street 123, 12345 Lund, Sverige</h5>
+    <h5>Telefon: 070-1234567 | Måndag-Fredag 08:00-17:00</h5>
+  </footer>
+</body>
