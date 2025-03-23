@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="sv">          
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Show Page</title>
-  <link rel="stylesheet" href="assets/css/styles.css">    
-</head>
-<body>
-  <nav>
-    <a href="#" onclick="showPage('home'); return false;">Hem</a>
-    <a href="#" onclick="showPage('printers'); return false;">Information 3D-Scanning/Printing</a>
-    <a href="#" onclick="showPage('contact'); return false;">Kontakt</a>
-  </nav>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Page</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
 
-  <div id="content" class="container"></div>
+  <body>
+    <nav>
+      <a href="#" onclick="showPage('home'); return false;">Hem</a>
+      <a href="#" onclick="showPage('printers'); return false;"
+        >Information 3D-Scanning/Printing</a
+      >
+      <a href="#" onclick="showPage('contact'); return false;">Kontakt</a>
+    </nav>
 
-  <script>
-    function showPage(page) {
-      document.getElementById("content").style.opacity = "0";
-      setTimeout(() => {
-        let content = {
-          'home': `
+    <div id="content" class="container"></div>
+
+    <script>
+      function showPage(page) {
+        document.getElementById("content").style.opacity = "0";
+        setTimeout(() => {
+          let content = {
+            home: `
             <h1>3D PRINTING</h1>
             <h2>BARA DIN FANTASI OCH KUNSKAP SOM KAN SÄTTA STOPP!!!</h2>
 
@@ -61,7 +64,7 @@
                     </ul>
                 
                 `,
-                'printers': ` <!-- Här börjar sida 2 -->
+            printers: ` <!-- Här börjar sida 2 -->
                     <h1>Arbetsgång för ”3D-Scannat objekt till 3D-Printbar fil”</h1>
                     
 <p>När ett objekt har scannats så får man en mesh fil, ett skal av den scannade ytan bestående av referenspunkter som bildar trianglar. När filen importeras i programmet, ex Fusion 360, så behöver man se över eventuell missad data som kan generera hål i meshen eller direkta fel i den avbildade scanningen. Det kan även komma med oönskad scannat material från omgivningen som behöver rensas undan.
@@ -131,7 +134,7 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
   
   <!-- Kontaktformulär -->  
  `,
- 'contact': `
+            contact: `
             <h1>Kontakta mig</h1>
             <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p>
             <form id="contactForm" onsubmit="return showConfirmation();"> <!-- Kan bytas ut till en fysisk server som tex formspree -->
@@ -148,37 +151,37 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
             <div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;">
               ✅ Tack! Ditt meddelande har skickats.
             </div>
-          `
-        };
-        document.getElementById("content").innerHTML = content[page];
-        document.getElementById("content").style.opacity = "1";
-      }, 300);
-    }
-
-    function showConfirmation() {
-      const captcha = document.getElementById("captcha").value.trim();
-      if (captcha !== "7") {
-        alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
-        return false;
+          `,
+          };
+          document.getElementById("content").innerHTML = content[page];
+          document.getElementById("content").style.opacity = "1";
+        }, 300);
       }
-      document.getElementById("confirmation").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("confirmation").style.display = "none";
-        document.getElementById("contactForm").reset();
-        showPage('home');
-      }, 5000); /*antal sekunder som bekräftelsen visas*/
-      return false; // Hindrar att formuläret skickas till server
-    }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      showPage('home'); /*återgår till huvudmenyn efter sekunderna*/
-    });
-  </script>
+      function showConfirmation() {
+        const captcha = document.getElementById("captcha").value.trim();
+        if (captcha !== "7") {
+          alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
+          return false;
+        }
+        document.getElementById("confirmation").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("confirmation").style.display = "none";
+          document.getElementById("contactForm").reset();
+          showPage("home");
+        }, 2000); /*antal sekunder som bekräftelsen visas*/
+        return false; // Hindrar att formuläret skickas till server
+      }
 
-  <footer>
-    <h5>&copy; 2024 3D-Printing Website. All rights reserved.</h5>
-    <h5>Adress: 3D-Tech Street 123, 12345 Lund, Sverige</h5>
-    <h5>Telefon: 070-1234567 | Måndag-Fredag 08:00-17:00</h5>
-  </footer>
-</body>
+      document.addEventListener("DOMContentLoaded", function () {
+        showPage("home"); /*återgår till huvudmenyn efter sekunderna*/
+      });
+    </script>
+
+    <footer>
+      <h5>&copy; 2024 3D-Printing Website. All rights reserved.</h5>
+      <h5>Adress: 3D-Tech Street 123, 12345 Lund, Sverige</h5>
+      <h5>Telefon: 070-1234567 | Måndag-Fredag 08:00-17:00</h5>
+    </footer>
+  </body>
 </html>
