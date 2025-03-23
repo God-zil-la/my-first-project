@@ -1,49 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="sv">          
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Show Page</title>
-<link rel="stylesheet" href="assets/css/styles.css">    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Page</title>
+  <link rel="stylesheet" href="assets/css/styles.css">    
 </head>
 <body>
-<nav>
+  <nav>
     <a href="#" onclick="showPage('home'); return false;">Hem</a>
     <a href="#" onclick="showPage('printers'); return false;">Information 3D-Scanning/Printing</a>
     <a href="#" onclick="showPage('contact'); return false;">Kontakt</a>
-</nav>
-<div id="content" class="container"></div>
-<script>
+  </nav>
+
+  <div id="content" class="container"></div>
+
+  <script>
     function showPage(page) {
-        document.getElementById("content").style.opacity = "0";
-        setTimeout(() => {
-            let content = {
-                'home': `
-                <H1>3D PRINTING</H1>
-                <h2>BARA DIN FANTASI OCH KUNSKAP SOM KAN SÄTTA STOPP!!!</H2>
+      document.getElementById("content").style.opacity = "0";
+      setTimeout(() => {
+        let content = {
+          'home': `
+            <h1>3D PRINTING</h1>
+            <h2>BARA DIN FANTASI OCH KUNSKAP SOM KAN SÄTTA STOPP!!!</h2>
 
 
                    
-                   <h2>Vad är då 3D-Printing och 3D-Scanning?</h2>
-                    <p><strong>3D-Printing</strong> är en teknik där tredimensionella objekt skapas genom att lager av material byggs upp baserat på en digital modell. Detta möjliggör snabb och anpassad tillverkning inom olika industrier, inklusive medicin, bilindustrin och design.</p> <br>
-                    <p><strong>3D-Scanning</strong> används för att digitalisera fysiska objekt genom att skapa en exakt digital representation. Det används ofta inom reverse engineering, medicinsk forskning, konstbevaring och industriella tillämpningar.</p>
-                    <h2>Hur fungerar tekniken?</h2>
-                    <ul>
-                        <p><li><strong>FDM (Fused Deposition Modeling):</strong> Smälter och extruderar plasttråd lager för lager.</li></p>
+ <h2>Vad är då 3D-Printing och 3D-Scanning?</h2>
+<p><strong>3D-Printing</strong> är en teknik där tredimensionella objekt skapas genom att lager av material byggs upp baserat på en digital modell. Detta möjliggör snabb och anpassad tillverkning inom olika industrier, inklusive medicin, bilindustrin och design.</p> <br>
+ <p><strong>3D-Scanning</strong> används för att digitalisera fysiska objekt genom att skapa en exakt digital representation. Det används ofta inom reverse engineering, medicinsk forskning, konstbevaring och industriella tillämpningar.</p>
+ <h2>Hur fungerar tekniken?</h2>
+ <ul>
+ <li><strong>FDM (Fused Deposition Modeling):</strong> Smälter och extruderar plasttråd lager för lager.</li>
                         
 <div id="prettyWrapper">
 <div class="inblock">
 <img src="assets/images/fdm skrivare.jpg" alt="Beskrivning">  <img src="assets/images/filament.jpg" alt="Beskrivning"> <img src="assets/images/lok.jpg" alt="Beskrivning">
 <div class="caption"><p style='color: red;'><strong>Exempel på FDM Skrivare sen vanlig PLA FDM Plasttråd till en färdig produkt. På denna bild ett lok</strong></p>
                         
-                        <p><li><strong>SLA (Stereolithography):</strong> Härdar flytande resin med en laser.</li></p>
+<li><strong>SLA (Stereolithography):</strong> Härdar flytande resin med en laser.</li>
                         <div id="prettyWrapper">
 <div class="inblock">
 <img src="assets/images/sla.jpg" alt="Beskrivning">  <img src="assets/images/sla medel.jpg" alt="Beskrivning"> <img src="assets/images/sla slut.jpg" alt="Beskrivning">
 <div class="caption"><p style='color: red;'><strong>Vanlig prisvärd SLA Skrivare, sem här använder man flytande material och till sist en färdig detaljerad produkt.</strong></p>
                         
-                        <p><li><strong>SLS (Selective Laser Sintering):</strong> Använder en laser för att smälta pulvermaterial och skapa detaljerade objekt.</li></p>
+<li><strong>SLS (Selective Laser Sintering):</strong> Använder en laser för att smälta pulvermaterial och skapa detaljerade objekt.</li>
                     </ul>
 <div class="inblock">
 <img src="assets/images/sls maskin.jpg" alt="Beskrivning">  <img src="assets/images/sls medel.jpg" alt="Beskrivning"> <img src="assets/images/sls klar.jpg" alt="Beskrivning">
@@ -116,7 +117,7 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
 <p>Några få exempel på branscher där 3d scanning används i dag är:</p>
 
             <ul>
-               <li><strong>Tillverkningsindustrin:</strong> kontroll/kvalitetssäkring, reverse engineering, prototypframtagning, CAD konstruktion.</li>
+ <li><strong>Tillverkningsindustrin:</strong> kontroll/kvalitetssäkring, reverse engineering, prototypframtagning, CAD konstruktion.</li>
 <li><strong>Arkitektur.</strong></li>
 <li><strong>Sjukvård:</strong> ortopedi, proteser, plastikkirurgi, personligt anpassade hjälpmedel och produkter.</li>
 <li><strong>Design/mode:</strong> framtagning av VR/AR miljöer, skapande av ex kläder och möbler.</li>
