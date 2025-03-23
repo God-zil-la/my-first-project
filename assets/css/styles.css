@@ -23,39 +23,39 @@ header, nav, footer { /* Shared styling for header, navigation, and footer */
 }
 
 /* Navigation Links */
-nav a {
-    margin: 10px;
-    text-decoration: none;
+nav a { /* Navigation link styling */
+    margin: 10px; /* Spacing between links */
+    text-decoration: none; /* Remove underline */
     color: black; /* Matches footer text color */
-    font-weight: bold;
-    font-size: 34px;
-    transition: color 0.3s;
+    font-weight: bold; /* Bold text */
+    font-size: 34px; /* Larger font size */
+    transition: color 0.3s; /* Smooth color transition */
 }
 
-nav a:hover {
-    color: white; /* Enhances hover visibility */
+nav a:hover { /* Hover effect */
+    color: white; /* Enhances hover visibility */ 
 }
 
 /* Footer Styling */
-footer {
+footer { /* Footer styling */
     background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
     color: black !important; /* Ensures black text */
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    z-index: 10;
+    padding: 15px; /* Padding around content */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Wrap content to next line if needed */
+    width: 100%; /* Full width */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for z-index */
+    z-index: 10; /* Ensures footer is on top */
     border-top: 2px solid gold; /* Optional: Adds a subtle border */
 }
 
 /* Forces all footer text to be black */
 footer * {
-    color: black !important;
+    color: black !important; /* Ensures black text */
 }
 
 /* Main Content Container */
