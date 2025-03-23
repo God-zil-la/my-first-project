@@ -213,17 +213,17 @@ button:hover { /* Hover effect */
     }
 
         /* Ensures footer text is black even on small screens */
-        footer * {
-            color: black !important;
+        footer * {  /* Footer text color */ 
+            color: black !important; /* Ensures black text */
         }
 /*övergång fadeout i kontakt formulär till hem*/
-@keyframes fadeOutIn {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes fadeOutIn {                   
+    0% { opacity: 1; }      
+    50% { opacity: 0; }       
+    100% { opacity: 1; }  
   }
   
-  .fade-transition {
-    animation: fadeOutIn 1s ease-in-out;
+  .fade-transition {  
+    animation: fadeOutIn 1s ease-in-out;   
   }
     }
