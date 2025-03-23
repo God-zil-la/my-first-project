@@ -149,12 +149,12 @@ document.getElementById("content").style.opacity = "1";
         }, 300);
     }
     
-    function submitForm(event) {
-        event.preventDefault();
-        document.getElementById("confirmation").style.display = "block";
-        setTimeout(() => {
-            document.getElementById("confirmation").style.display = "none";
-        }, 5000);
+function submitForm(event) {
+event.preventDefault();
+document.getElementById("confirmation").style.display = "block";
+setTimeout(() => {
+document.getElementById("confirmation").style.display = "none";
+ }, 5000);
     }
     
     document.addEventListener("DOMContentLoaded", function () {
