@@ -19,6 +19,7 @@ header, nav, footer {
     width: 100%;
     font-weight: bold;
     text-align: center;
+    border-bottom: 2px solid gold;
 }
 
 /* Navigation Links */
@@ -211,7 +212,8 @@ button:hover {
         text-align: center;
     }
 
-    /* Ensures footer text is black even on small screens */
-    footer * {
-        color: black !important;
+        /* Ensures footer text is black even on small screens */
+        footer * {
+            color: black !important;
+        }
     }
