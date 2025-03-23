@@ -132,59 +132,52 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
     
  `,
  'contact': `
-<h1>Kontakta mig</h1>
-<p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p>
-<form id="contactForm">
-  <label for="name">Namn:</label>
-  <input type="text" id="name" name="name" 
-         required minlength="2" 
-         pattern="[A-Za-zÅÄÖåäö\s-]+" 
-         title="Ange ett giltigt namn (endast bokstäver)" />
-  
-  <label for="email">E-post:</label>
-  <input type="email" id="email" name="email" required />
-  
-  <label for="message">Meddelande:</label>
-  <textarea id="message" name="message" required></textarea>
-  
-  <!-- Enkel CAPTCHA-fråga -->
-  <label for="captcha">Vad blir 3 + 4? (SPAM-kontroll)</label>
-  <input type="text" id="captcha" name="captcha" required />
-  
-  <button type="submit">Skicka</button>
-</form>
-
-<div id="confirmation" style="display:none; color: green; font-weight: bold;">
-  Tack för ditt meddelande! Vi återkommer snart.
-</div>
-</form>
-
- `
-            };
-
-document.getElementById("content").innerHTML = content[page];
-document.getElementById("content").style.opacity = "1";
-        }, 300);
+            <h1>Kontakta mig</h1>
+            <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p>
+            <form id="contactForm" action="https://formspree.io/f/YOUR_ID_HERE" method="POST" onsubmit="return showConfirmation()">
+              <label for="name">Namn:</label>
+              <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\\s-]+" minlength="2" title="Endast bokstäver tillåtna" />
+              <label for="email">E-post:</label>
+              <input type="email" id="email" name="email" required />
+              <label for="message">Meddelande:</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              <label for="captcha">Vad blir 3 + 4? (SPAM-kontroll)</label>
+              <input type="text" id="captcha" required />
+              <input type="hidden" name="_autoresponse" value="Tack för ditt meddelande! Vi återkommer så snart vi kan.">
+              <button type="submit">Skicka</button>
+            </form>
+            <div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;">
+              ✅ Tack! Ditt meddelande har skickats.
+            </div>
+          `
+        };
+        document.getElementById("content").innerHTML = content[page];
+        document.getElementById("content").style.opacity = "1";
+      }, 300);
     }
-    
-function submitForm(event) {
-event.preventDefault();
-document.getElementById("confirmation").style.display = "block";
-setTimeout(() => {
-document.getElementById("confirmation").style.display = "none";
- }, 5000);
+
+    function showConfirmation() {
+      const captcha = document.getElementById("captcha").value.trim();
+      if (captcha !== "7") {
+        alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
+        return false;
+      }
+      document.getElementById("confirmation").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("confirmation").style.display = "none";
+      }, 5000);
+      return true;
     }
-    
+
     document.addEventListener("DOMContentLoaded", function () {
-        showPage('home');
+      showPage('home');
     });
-</script>
+  </script>
 
-<footer>
-<h5>&copy; 2024 3D-Printing Website. All rights reserved.</h5>
-<h5>Adress: 3D-Tech Street 123, 12345 Lund, Sverige</h5>
-<h5>Telefon: 070-1234567 | Måndag-Fredag 08:00-17:00</h5>
-
-</footer>
+  <footer>
+    <h5>&copy; 2024 3D-Printing Website. All rights reserved.</h5>
+    <h5>Adress: 3D-Tech Street 123, 12345 Lund, Sverige</h5>
+    <h5>Telefon: 070-1234567 | Måndag-Fredag 08:00-17:00</h5>
+  </footer>
 </body>
 </html>
