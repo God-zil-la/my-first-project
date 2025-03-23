@@ -1,25 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: black;
-    color: gold;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+body { /* Body Styling */
+    font-family: Arial, sans-serif; /* Fallback font */
+    text-align: center; /* Center text alignment */
+    background-color: black; /* Background color */
+    color: gold; /* Text color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Header, Navigation, and Footer Styling (Unified Layout) */
-header, nav, footer {
+header, nav, footer { /* Shared styling for header, navigation, and footer */
     background: linear-gradient(90deg, #ff5733, #ffbd69); /* Gradient background */
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 2px solid gold;
+    padding: 15px; /* Padding around content */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Wrap content to next line if needed */
+    width: 100%; /* Full width */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    border-bottom: 2px solid gold; /* Optional: Adds a subtle border */
 }
 
 /* Navigation Links */
