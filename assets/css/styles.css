@@ -183,33 +183,33 @@ button:hover { /* Hover effect */
 }
 
 /* Mobile Optimization */
-@media screen and (max-width: 480px) {
-    nav a {
-        font-size: 16px;
-        margin: 5px;
+@media screen and (max-width: 480px) { /* Mobile Optimization */
+    nav a { /* Navigation link styling */
+        font-size: 16px; /* Font size */
+        margin: 5px; /* Spacing between links */
     }
-    .container {
-        padding: 20px;
-        width: 95%;
+    .container { /* Main content container */
+        padding: 20px; /* Padding around content */
+        width: 95%; /* 95% width */
     }
-    p, ul, li {
-        font-size: 14px;
+    p, ul, li { /* Typography */
+        font-size: 14px; /* Font size */
     }
-    button {
-        font-size: 16px;
-        padding: 10px 20px;
+    button { /* Button styling */
+        font-size: 16px; /* Font size */
+        padding: 10px 20px; /* Padding around content */
     }
 
-    footer {
-        background: linear-gradient(90deg, #ff5733, #ffbd69) !important;
-        padding: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-        font-weight: bold;
-        text-align: center;
+    footer { /* Footer styling */
+        background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
+        padding: 15px; /* Padding around content */
+        display: flex; /* Flexbox layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        flex-wrap: wrap; /* Wrap content to next line if needed */
+        width: 100%; /* Full width */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center text */
     }
 
         /* Ensures footer text is black even on small screens */
