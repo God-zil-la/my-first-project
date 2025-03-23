@@ -60,36 +60,36 @@ footer * {
 
 /* Main Content Container */
 .container {
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 60px;
-    background: black;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 4px solid gold;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    text-align: center;
+    max-width: 1300px; /* Maximum width */
+    margin: 40px auto; /* Center content horizontally */
+    padding: 60px; /* Padding around content */
+    background: black; /* Background color */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: 4px solid gold; /* Gold border */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out; /* Fade in effect */
+    text-align: center; /* Center text */
 }
 
 /* Typography */
-h1, h2, p, ul, li {
-    color: gold;
+h1, h2, p, ul, li { /* Shared typography */
+    color: gold; /* Text color */
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.8;
+p { /* Paragraph Styling */
+    font-size: 18px; /* Font size */
+    line-height: 1.8; /* Line height */
 }
 
-ul {
-    text-align: left;
-    display: inline-block;
-    font-size: 18px;
+ul { /* Unordered List Styling */
+    text-align: left; /* Left-align text */
+    display: inline-block; /* Inline block layout */
+    font-size: 18px; /* Font size */
 }
 
-li {
-    margin-bottom: 15px;
+li { /* List Item Styling */
+    margin-bottom: 15px; /* Spacing between items */
 }
 
 /* Image Styling */
