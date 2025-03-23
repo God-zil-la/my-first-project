@@ -93,35 +93,35 @@ li { /* List Item Styling */
 }
 
 /* Image Styling */
-.image-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    flex-wrap: wrap;
+.image-container { /* Image container */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    gap: 20px; /* Spacing between images */
+    margin-top: 20px; /* Spacing from text */
+    flex-wrap: wrap; /* Wrap images to next line if needed */
 }
 
-.image-container img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+.image-container img { /* Image styling */
+    width: 100%; /* Full width */
+    max-width: 450px; /* Maximum width */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
 
-.image-container img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.image-container img:hover { /* Hover effect */
+    transform: scale(1.1); /* Scale image */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
 /* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
+form { /* Form container */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical layout */
+    align-items: center; /* Center content horizontally */
+    width: 100%; /* Full width */
+    max-width: 500px; /* Maximum width */
+    margin: auto; /* Center form horizontally */
 }
 
 input, textarea {
