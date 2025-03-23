@@ -153,31 +153,31 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
                      </div>
           `
         };
-        document.getElementById("content").innerHTML = content[page];
-        document.getElementById("content").style.opacity = "1";
-      }, 300);
+        document.getElementById("content").innerHTML = content[page]; /*Här visas sidan som valts*/
+        document.getElementById("content").style.opacity = "1"; /*Här visas sidan som valts*/
+      }, 300); /*antal sekunder som sidan visas*/
     }
 
-    function showConfirmation() {
-      const captcha = document.getElementById("captcha").value.trim();
-      if (captcha !== "7") {
-        alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");
-        return false;
+    function showConfirmation() { /*Funktion för att skicka formuläret*/
+      const captcha = document.getElementById("captcha").value.trim(); /*Hämtar captcha värdet*/
+      if (captcha !== "7") {    /*Om captcha inte är 7 så visas felmeddelande*/
+        alert("Fel svar på SPAM-kontrollen (3 + 4). Försök igen.");     /*Felmeddelande*/
+        return false; /*Hindrar att formuläret skickas till server*/
       }
-      document.getElementById("confirmation").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("confirmation").style.display = "none";
-        document.getElementById("contactForm").reset();
-        document.getElementById("content").classList.add("fade-transition");
-        showPage('home');
-        setTimeout(() => {
-          document.getElementById("content").classList.remove("fade-transition");
-        }, 1000);
+      document.getElementById("confirmation").style.display = "block"; /*Visar bekräftelsen*/
+      setTimeout(() => { /*Visar bekräftelsen i 2 sekunder*/
+        document.getElementById("confirmation").style.display = "none"; /*Visar bekräftelsen*/ 
+        document.getElementById("contactForm").reset(); /*Nollställer formuläret*/
+        document.getElementById("content").classList.add("fade-transition"); /*Lägger till en fade-transition*/
+        showPage('home'); /*Återgår till huvudmenyn*/
+        setTimeout(() => { /*Visar bekräftelsen i 1 sekund*/
+          document.getElementById("content").classList.remove("fade-transition"); /*Tar bort fade-transition*/
+        }, 1000); /*antal sekunder som bekräftelsen visas*/
       }, 2000); /*antal sekunder som bekräftelsen visas*/
       return false; // Hindrar att formuläret skickas till server
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () { /*Visar huvudmenyn*/
       showPage('home');/*återgår till huvudmenyn efter sekunderna*/
     });
   </script>
