@@ -134,7 +134,7 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
  'contact': `
             <h1>Kontakta mig</h1>
             <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p>
-            <form id="contactForm" onsubmit="return showConfirmation();">
+            <form id="contactForm" onsubmit="return showConfirmation();"> <!-- Kan bytas ut till en fysisk server som tex formspree -->
               <label for="name">Namn:</label>
               <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\\s-]+" minlength="2" title="Endast bokstäver tillåtna" />
               <label for="email">E-post:</label>
@@ -166,12 +166,12 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
         document.getElementById("confirmation").style.display = "none";
         document.getElementById("contactForm").reset();
         showPage('home');
-      }, 5000);
+      }, 5000); /*antal sekunder som bekräftelsen visas*/
       return false; // Hindrar att formuläret skickas till server
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-      showPage('home');
+      showPage('home'); /*återgår till huvudmenyn efter sekunderna*/
     });
   </script>
 
