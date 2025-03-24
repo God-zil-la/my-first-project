@@ -102,8 +102,18 @@ li { /* List Item Styling */
 }
 
 .image-container img { /* Image styling */
-    width: 100%; /* Full width */
-    max-width: 450px; /* Maximum width */
+    width: 300px; /* Image width */
+    aspect-ratio: 1/1; /* Square aspect ratio */
+    object-fit: cover; /* Cover image */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+} 
+.inblock img { /* Image styling */
+   
+    width: 300px; /* Image width */
+    aspect-ratio: 1/1; /* Square aspect ratio */
+    object-fit: cover; /* Cover image */
     border-radius: 12px; /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
