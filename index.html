@@ -20,7 +20,7 @@
 
     <script> /*Javascript för att visa sidorna*/
       function showPage(page) { /*Funktion för att visa sidan*/
-        document.getElementById("content").style.opacity = "1"; /*Här visas sidan som valts*/
+        document.getElementById("content").style.opacity = "0"; /*Här visas sidan som valts*/
         setTimeout(() => { /*Visar sidan efter 0.3 sekunder*/
           let content = { /*Innehåll på sidorna*/
             home: ` 
@@ -147,13 +147,13 @@ I tillverkningsindustrin kan den här metoden användas för kvalitetssäkring o
             <p>Har du frågor kring 3D-printing eller Scanning? Tveka inte att höra av dig!</p> <!-- Kontaktformulär -->
             <form id="contactForm" onsubmit="return showConfirmation();"> <!-- Kan bytas ut till en fysisk server som tex formspree -->
               <label for="name">Namn:</label> <!-- Kräver minst 2 bokstäver -->
-              <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\s-]+" minlength="2" title="Endast bokstäver tillåtna" /> <!-- Kräver minst 2 bokstäver -->
+              <input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\\s-]+" minlength="2" title="Endast bokstäver tillåtna" /> <!-- Kräver minst 2 bokstäver -->
               <label for="email">E-post:</label> <!-- Kräver en giltig e-postadress -->
               <input type="email" id="email" name="email" required /> <!-- Kräver en giltig e-postadress -->
               <label for="message">Meddelande:</label> 
               <textarea id="message" name="message" rows="4" required></textarea> 
               <label for="captcha">Vad blir 3 + 4? (SPAM-kontroll)</label> <!-- SPAM-kontroll -->
-              <input type="text" id="captcha" required autocomplete="off" /> <!-- SPAM-kontroll -->
+             <input type="text" id="captcha" required autocomplete="off" /> <!-- SPAM-kontroll -->
               <button type="submit">Skicka</button> <!-- Skicka formuläret -->
             </form>
             <div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;"> <!-- Bekräftelsemeddelande -->
