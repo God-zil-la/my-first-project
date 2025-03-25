@@ -230,7 +230,21 @@ button:hover { /* Hover effect */
         font-size: 16px; /* Font size */
         padding: 10px 20px; /* Padding around content */
     }
-         /* Ensures footer text is black even on small screens */
+
+    /* Form Styling */
+    footer { /* Footer styling */
+        background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
+        padding: 15px; /* Padding around content */
+        display: flex; /* Flexbox layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        flex-wrap: wrap; /* Wrap content to next line if needed */
+        width: 100%; /* Full width */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center text */
+    }
+
+        /* Ensures footer text is black even on small screens */
         footer * {  /* Footer text color */ 
             color: black !important; /* Ensures black text */ 
         }     
