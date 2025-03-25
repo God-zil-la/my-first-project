@@ -256,8 +256,9 @@ button:hover { /* Hover effect */
   }
   
     /* Fade transition class */
-
   .fade-transition {   /* Fade transition class */
     animation: fadeOutIn 1s ease-in-out;       /* Apply animation */
   }
     }  
+
+
