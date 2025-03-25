@@ -259,14 +259,6 @@ button:hover { /* Hover effect */
   .fade-transition {   /* Fade transition class */
     animation: fadeOutIn 1s ease-in-out;       /* Apply animation */
   }
-  /* Confirmation Styling */
-  #confirmation {
-    font-size: 18px; /* Font size */
-    padding: 10px; /* Padding around content */
-    border: 2px solid limegreen; /* Border color */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #002200; /* Background color */
-  }
     }  
 
 
