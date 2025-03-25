@@ -37,22 +37,7 @@ nav a:hover {
     color: white; /* Enhances hover visibility */ 
 }
 
-/* Footer Styling */
-footer { 
-    background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
-    color: black !important; /* Ensures black text */
-    padding: 15px; /* Padding around content */
-    display: flex; /* Flexbox layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-wrap: wrap; /* Wrap content to next line if needed */
-    width: 100%; /* Full width */
-    font-weight: bold; /* Bold text */
-    text-align: center; /* Center text */
-    position: relative; /* Position relative for z-index */
-    z-index: 10; /* Ensures footer is on top */
-    border-top: 2px solid gold; /* Optional: Adds a subtle border */
-}
+
 
 /* Forces all footer text to be black */
 footer * {
@@ -231,18 +216,22 @@ button:hover { /* Hover effect */
         padding: 10px 20px; /* Padding around content */
     }
 
-    /* Form Styling */
-    footer { /* Footer styling */
-        background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
-        padding: 15px; /* Padding around content */
-        display: flex; /* Flexbox layout */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically */
-        flex-wrap: wrap; /* Wrap content to next line if needed */
-        width: 100%; /* Full width */
-        font-weight: bold; /* Bold text */
-        text-align: center; /* Center text */
-    }
+/* Footer Styling */
+footer { 
+    background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
+    color: black !important; /* Ensures black text */
+    padding: 15px; /* Padding around content */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Wrap content to next line if needed */
+    width: 100%; /* Full width */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for z-index */
+    z-index: 10; /* Ensures footer is on top */
+    border-top: 2px solid gold; /* Optional: Adds a subtle border */
+}
 
         /* Ensures footer text is black even on small screens */
         footer * {  /* Footer text color */ 
