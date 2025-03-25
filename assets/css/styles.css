@@ -92,14 +92,16 @@ li {
 }
 
 /* Shared Image Styling */
-.shared-image-style { 
-    width: 300px; /* Image width */
-    aspect-ratio: 1/1; /* Square aspect ratio */
-    object-fit: cover; /* Cover image */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
-}
+.shared-image-style {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block; /* optional, ensures image respects box model */
+  }
 /* Image Container Styling */
 .image-container {
     display: flex; /* Flexbox layout */ 
