@@ -220,4 +220,12 @@ button:active {
         font-size: 16px; /* Smaller font size */
         padding: 10px 20px; /* Smaller padding */
     }
+    /* Form Styling */
+    #confirmation {
+        font-size: 18px; /* Larger font size */
+        padding: 10px; /* Add padding */
+        border: 2px solid limegreen; /* Green border */
+        border-radius: 8px; /* Rounded corners */
+        background-color: #002200; /* Dark green background */
+      }
 }
