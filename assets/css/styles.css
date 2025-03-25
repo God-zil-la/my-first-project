@@ -1,244 +1,263 @@
-/**
- * CSS Reset
- * Normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
- */
-:root {
-    --gold: gold; /* #FFD700 */
-    --footer-gradient: linear-gradient(90deg, #ff5733, #ffbd69);
-}
-
 /* Body Styling */
-body {
+body { 
     font-family: Arial, sans-serif; /* Fallback font */
-    text-align: center; /* Center text */
-    background-color: black; /* Black background */
-    color: var(--gold); /* Gold text */
+    text-align: center; /* Center text alignment */
+    background-color: black; /* Background color */
+    color: gold; /* Text color */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header, Navigation, and Footer Styling */
-header, nav, footer {
-    background: var(--footer-gradient); /* Gradient background */
-    padding: 15px; /* Add padding */
+/* Header, Navigation, and Footer Styling (Unified Layout) */ /* Shared styling for header, navigation, and footer */
+header, nav, footer { 
+    background: linear-gradient(90deg, #ff5733, #ffbd69); /* Gradient background */
+    padding: 15px; /* Padding around content */
     display: flex; /* Flexbox layout */
-    justify-content: center; /* Center content */
-    align-items: center; /* Center content */
-    flex-wrap: wrap; /* Wrap elements */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Wrap content to next line if needed */
     width: 100%; /* Full width */
-    font-weight: bold; /* Bold text */ 
-    text-align: center; /* Center text */
-    border-bottom: 2px solid var(--gold); /* Gold border */
-}
-
-/* Footer Unified Styling */
-footer { /* Footer Styling */ 
-    position: relative; /* Relative positioning */  
-    z-index: 10; /* Z-index to keep on top */
-    border-top: 2px solid var(--gold); /* Gold border */
-}
-/* Footer Gradient Styling */
-footer * { /* Footer Text Styling */
-    color: black !important; /* Black text */
-}
-
-/* Navigation Links */
-nav a { /* Navigation Link Styling */
-    margin: 10px; /* Add margin */
-    text-decoration: none; /* Remove underline */
-    color: black; /* Black text */
     font-weight: bold; /* Bold text */
-    font-size: 34px; /* Large font size */
+    text-align: center; /* Center text */
+    border-bottom: 2px solid gold; /* Optional: Adds a subtle border */
+}
+
+/* Navigation link styling */
+nav a { 
+    margin: 10px; /* Spacing between links */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Matches footer text color */
+    font-weight: bold; /* Bold text */
+    font-size: 34px; /* Larger font size */
     transition: color 0.3s; /* Smooth color transition */
 }
-/* Navigation Link Hover Styling */
+/* Hover effect */
 nav a:hover { 
-    color: white; /* White text */
+    color: white; /* Enhances hover visibility */ 
+}
+
+/* Footer Styling */
+footer { 
+    background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
+    color: black !important; /* Ensures black text */
+    padding: 15px; /* Padding around content */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Wrap content to next line if needed */
+    width: 100%; /* Full width */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for z-index */
+    z-index: 10; /* Ensures footer is on top */
+    border-top: 2px solid gold; /* Optional: Adds a subtle border */
+}
+
+/* Forces all footer text to be black */
+footer * {
+    color: black !important; /* Ensures black text */
 }
 
 /* Main Content Container */
 .container {
     max-width: 1300px; /* Maximum width */
-    margin: 40px auto; /* Center container */
-    padding: 60px; /* Add padding */
-    background: black; /* Black background */
+    margin: 40px auto; /* Center content horizontally */
+    padding: 60px; /* Padding around content */
+    background: black; /* Background color */
     border-radius: 12px; /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    border: 4px solid var(--gold); /* Gold border */
+    border: 4px solid gold; /* Gold border */
     opacity: 0; /* Hidden by default */
-    transition: opacity 0.5s ease-in-out; /* Fade transition */
+    transition: opacity 0.5s ease-in-out; /* Fade in effect */
     text-align: center; /* Center text */
 }
 
 /* Typography */
-h1, h2, p, ul, li { /* Headings and Paragraph Styling */
-    color: var(--gold); /* Gold text */
+h1, h2, p, ul, li { /* Shared typography */
+    color: gold; /* Text color */
 }
-/* Heading Styling */
-p {
-    font-size: 18px; /* Larger font size */
-    line-height: 1.8; /* Larger line height */
+
+/* Paragraph Styling */
+p { 
+    font-size: 18px; /* Font size */
+    line-height: 1.8; /* Line height */
 }
-/* Heading Styling */
-ul {
+
+/* Unordered List Styling */
+ul { 
     text-align: left; /* Left-align text */
     display: inline-block; /* Inline block layout */
-    font-size: 18px; /* Larger font size */
+    font-size: 18px; /* Font size */
 }
+
 /* List Item Styling */
-li {
-    margin-bottom: 15px; /* Add margin */
+li { 
+    margin-bottom: 15px; /* Spacing between items */
 }
 
-/* Shared Image Styling */
-.shared-image-style {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    max-width: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: block; /* optional, ensures image respects box model */
-  }
-
-  .image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 300px; /* or any width you want */
-    aspect-ratio: 1 / 1; /* keeps it square */
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .image-wrapper img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-/* Image Container Styling */
-.image-container {
-    display: flex; /* Flexbox layout */ 
-    justify-content: center; /* Center content */
-    gap: 20px; /* Add space between images */
-    margin-top: 20px; /* Add margin */
-    flex-wrap: wrap; /* Wrap images */
+/* Image Styling */
+.image-container { /* Image container */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    gap: 20px; /* Spacing between images */
+    margin-top: 20px; /* Spacing from text */
+    flex-wrap: wrap; /* Wrap images to next line if needed */
 }
-/* Image Hover Styling */
-.image-container img:hover {
+/* Image styling */
+.image-container img { 
+    width: 300px; /* Image width */
+    aspect-ratio: 1/1; /* Square aspect ratio */
+    object-fit: cover; /* Cover image */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+} 
+/* Image styling */
+.inblock img { 
+   
+    width: 300px; /* Image width */
+    aspect-ratio: 1/1; /* Square aspect ratio */
+    object-fit: cover; /* Cover image */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Hover effect */
+.image-container img:hover { /* Hover effect */
     transform: scale(1.1); /* Scale image */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Larger shadow */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
 /* Form Styling */
-form {
+form { /* Form container */
     display: flex; /* Flexbox layout */
-    flex-direction: column; /* Column layout */
-    align-items: center; /* Center content */
+    flex-direction: column; /* Vertical layout */
+    align-items: center; /* Center content horizontally */
     width: 100%; /* Full width */
     max-width: 500px; /* Maximum width */
-    margin: auto; /* Center form */
+    margin: auto; /* Center form horizontally */
 }
-/* Input Styling */
-input, textarea {
+
+/* Input and textarea styling */
+input, textarea { /* Input and textarea styling */
     width: 100%; /* Full width */
-    padding: 12px; /* Add padding */
-    margin: 10px 0; /* Add margin */
-    border-radius: 8px; /* Rounded corners */
-    border: 1px solid #ccc; /* Light border */
-    font-size: 16px; /* Larger font size */
-    background-color: #222; /* Dark background */
-    color: var(--gold); /* Gold text */
+    padding: 12px; /* Padding around content */
+    margin: 10px 0;     /* Spacing between elements */
+    border-radius: 8px;     /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+    font-size: 16px; /* Font size */
+    background-color: #222; /* Background color */
+    color: gold; /* Text color */
 }
-/* Input Focus Styling */
-input:focus, textarea:focus {
-    outline: 2px solid var(--gold); /* Gold outline */
+
+/* Focus state */
+input:focus, textarea:focus { /* Focus state */
+    outline: 2px solid gold; /* Gold outline */
 }
 
 /* Button Styling */
-button {
-    background-color: #ff5733; /* Orange background */
-    color: white; /* White text */
-    padding: 12px 24px; /* Padding */
-    border: none; /* No border */
+button { /* Button styling */
+    background-color: #ff5733; /* Button color */
+    color: white; /* Text color */
+    padding: 12px 24px; /* Padding around content */
+    border: none; /* Remove border */
     border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 18px; /* Larger font size */
-    transition: background 0.3s, transform 0.2s;    /* Smooth transition */
+    cursor: pointer; /* Cursor style */
+    font-size: 18px; /* Font size */
+    transition: background 0.3s, transform 0.2s; /* Smooth transition */
 }
-/* Button Hover Styling */
-button:hover {
-    background-color: #ffbd69; /* Lighter background */
+
+/* Hover effect */
+button:hover { /* Hover effect */
+    background-color: #ffbd69; /* Enhanced button color */
     transform: scale(1.05); /* Scale button */
-}
-/* Button Active Styling */
-button:active {
-    transform: scale(0.98); /* Scale button */
-    background-color: #ffa94d; /* Darker background */
 }
 
 /* Animations */
-@keyframes fadeIn { /* Fade In Animation */
-    from { opacity: 0; } /* Start from 0 opacity */
-    to { opacity: 1; } /* End at full opacity */
-}
-/* Fade In Transition */
-@keyframes fadeOutIn { /* Fade Out and In Animation */
-    0% { opacity: 1; } /* Start at full opacity */
-    50% { opacity: 0; } /* Fade out at 50% */
-    100% { opacity: 1; } /* Fade in at 100% */
-}
-/* Fade In Class */
-.fade-transition {
-    animation: fadeOutIn 1s ease-in-out; /* Apply animation */
+@keyframes fadeIn { /* Fade in animation */
+    from { opacity: 0; } /* Hidden by default */
+    to { opacity: 1; } /* Visible at the end */
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) { /* Tablet Styling */
-    nav { /* Navigation Styling */
-        flex-direction: column; /* Column layout */
-        padding: 10px; /* Add padding */
+@media screen and (max-width: 768px) { /* Tablet Optimization */
+    nav { /* Navigation styling */
+        flex-direction: column; /* Vertical layout */
+        padding: 10px; /* Padding around content */
     }
-    /* Navigation Link Styling */
-    nav a {
-        font-size: 18px; /* Larger font size */
+
+    /* Navigation link styling */
+    nav a { 
+        font-size: 18px; /* Font size */
     }
-    /* Main Content Container Styling */
-    .container {
+
+    /* Main content container */
+    .container { 
         width: 90%; /* 90% width */
     }
-    /* Shared Image Styling */
-    .shared-image-style {
-        max-width: 100%; /* Full width */
+
+    /* Image styling */
+    .image-container img { /* Image styling */
+        max-width: 100%; /* Maximum width */
     }
-    /* Image Container Styling */
-    p, ul, li {
-        font-size: 16px; /* Larger font size */
+
+    /* Form Styling */
+    p, ul, li { /* Typography */
+        font-size: 16px; /* Font size */
     }
 }
-/* Mobile Styling */
-@media screen and (max-width: 480px) { /* Mobile Styling */
-    nav a { /* Navigation Link Styling */
-        font-size: 16px; /* Smaller font size */
-        margin: 5px; /* Smaller margin */
+
+/* Mobile Optimization */
+@media screen and (max-width: 480px) { /* Mobile Optimization */
+    nav a { /* Navigation link styling */
+        font-size: 16px; /* Font size */
+        margin: 5px; /* Spacing between links */
     }
-    /* Main Content Container Styling */
-    .container {
-        padding: 20px; /* Smaller padding */
+
+    /* Main content container */
+    .container { /* Main content container */
+        padding: 20px; /* Padding around content */
         width: 95%; /* 95% width */
     }
-    /* Shared Image Styling */
-    p, ul, li {
-        font-size: 14px; /* Smaller font size */
+    p, ul, li { /* Typography */
+        font-size: 14px; /* Font size */
     }
-    /* Button Styling */
-    button {
-        font-size: 16px; /* Smaller font size */
-        padding: 10px 20px; /* Smaller padding */
+
+    /* Image styling */
+    button { /* Button styling */
+        font-size: 16px; /* Font size */
+        padding: 10px 20px; /* Padding around content */
     }
-    
-}
+
+    /* Form Styling */
+    footer { /* Footer styling */
+        background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
+        padding: 15px; /* Padding around content */
+        display: flex; /* Flexbox layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        flex-wrap: wrap; /* Wrap content to next line if needed */
+        width: 100%; /* Full width */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center text */
+    }
+
+        /* Ensures footer text is black even on small screens */
+        footer * {  /* Footer text color */ 
+            color: black !important; /* Ensures black text */ 
+        }     
+/*övergång fadeout i kontakt formulär till hem*/
+@keyframes fadeOutIn { /* Fade out and in animation */         
+    0% { opacity: 1; }   /* Visible by default */       
+    50% { opacity: 0; }  /* Hidden at 50% */      
+    100% { opacity: 1; }   /* Visible at the end */
+  }
+  
+    /* Fade transition class */
+
+  .fade-transition {   /* Fade transition class */
+    animation: fadeOutIn 1s ease-in-out;       /* Apply animation */
+  }
+    }  
