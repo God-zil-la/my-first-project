@@ -215,28 +215,7 @@ button:hover { /* Hover effect */
         font-size: 16px; /* Font size */
         padding: 10px 20px; /* Padding around content */
     }
-
-/* Footer Styling */
-footer { 
-    background: linear-gradient(90deg, #ff5733, #ffbd69) !important; /* Forces gradient */
-    color: black !important; /* Ensures black text */
-    padding: 15px; /* Padding around content */
-    display: flex; /* Flexbox layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-wrap: wrap; /* Wrap content to next line if needed */
-    width: 100%; /* Full width */
-    font-weight: bold; /* Bold text */
-    text-align: center; /* Center text */
-    position: relative; /* Position relative for z-index */
-    z-index: 10; /* Ensures footer is on top */
-    border-top: 2px solid gold; /* Optional: Adds a subtle border */
 }
-
-        /* Ensures footer text is black even on small screens */
-        footer * {  /* Footer text color */ 
-            color: black !important; /* Ensures black text */ 
-        }     
 /*övergång fadeout i kontakt formulär till hem*/
 @keyframes fadeOutIn { /* Fade out and in animation */         
     0% { opacity: 1; }   /* Visible by default */       
@@ -248,6 +227,7 @@ footer {
   .fade-transition {   /* Fade transition class */
     animation: fadeOutIn 1s ease-in-out;       /* Apply animation */
   }
+
   /* Confirmation Styling */
   #confirmation {
     font-size: 18px; /* Font size */
@@ -256,6 +236,61 @@ footer {
     border-radius: 8px; /* Rounded corners */
     background-color: #002200; /* Background color */
   }
-    }  
+  footer {
+    background: linear-gradient(90deg, #ff5733, #ffbd69);
+    padding: 5px 60px 5px;
+    color: black;
+    text-align: center;
+    border-top: 2px solid gold;
+    position: relative;
+  }
+  
+  .footer-social-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    pointer-events: auto;
+  }
+  
+  .footer-social-wrapper a {
+    color: black;
+    transition: color 0.3s;
+  }
+  
+  .footer-social-wrapper a:hover {
+    color: white;
+  }
+  
+  .footer-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  /* Flex bar with icons on opposite sides */
+.footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+  }
+  .footer-bar a {
+    color: black;
+    transition: color 0.3s;
+  }
+  
+  .footer-bar a:hover {
+    color: white;
+  }
+  
+  /* Footer text */
+  .footer-info h5 {
+    margin: 5px 0;
+  }
 
 
