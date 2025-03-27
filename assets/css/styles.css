@@ -6,7 +6,7 @@
 }
 /* Body Styling */
 body { 
-    font-family: Arial, sans-serif; /* Fallback font */
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Fallback font */
     text-align: center; /* Center text alignment */
     background-color: black; /* Background color */
     color: gold; /* Text color */
