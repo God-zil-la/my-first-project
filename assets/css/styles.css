@@ -62,10 +62,27 @@ footer * {
     text-align: center; /* Center text */
 }
 
+/* Fade in effect */
+.container ul {
+    display: block; /* Block layout */
+    text-align: left; /* Left-align text */
+    margin: 20px auto; /* Center content horizontally */
+    padding-left: 240px; /* Padding left */
+  }
+  /* Fade in effect */
+  li {
+    text-align: left;
+  }
+
 /* Typography */
-h1, h2 {color: #ff894d /* Text color */
+h1, ul, li, strong, em {color: #ff894d /* Text color */
 }
-p, ul, li { /* Shared typography */
+
+h1, h2 {
+    color: #ff5733; /* Text color */
+}
+
+p { /* Shared typography */
     color: gold; /* Text color */
 }
 
@@ -75,6 +92,15 @@ p {
     line-height: 1.8; /* Line height */
 }
 
+h1 { /* Heading 1 styling */
+    font-size: 60px; /* Font size */
+    margin-bottom: 20px; /* Spacing below heading */
+}
+
+h2 { /* Heading 2 styling */
+    font-size: 30px; /* Font size */
+    margin-bottom: 15px; /* Spacing below heading */
+}
 /* Unordered List Styling */
 ul { 
     text-align: left; /* Left-align text */
@@ -84,7 +110,7 @@ ul {
 
 /* List Item Styling */
 li { 
-    margin-bottom: 15px; /* Spacing between items */
+    margin-bottom: 5px; /* Spacing between items */
 }
 
 /* Image Styling */
