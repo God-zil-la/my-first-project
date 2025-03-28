@@ -1,227 +1,133 @@
-<!DOCTYPE html> <!-- HTML5 -->
-<html lang="en"> <!--språk-->
-  <head> <!-- Huvud -->
-    <meta charset="UTF-8"> <!-- Teckenuppsättning -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Skärmstorlek -->
-    <title>Show Page</title> <!-- Titel -->
-    <link rel="stylesheet" href="assets/css/styles.css"> <!-- CSS-fil -->
-  </head> <!-- Huvud -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Printing & Scanning</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
 
-  <body> <!-- Kropp -->
-    <nav> <!-- Navigering -->
-      <a href="#" onclick="showPage('home'); return false;">Home</a> <!-- Länkar till sidorna -->
-      <a href="#" onclick="showPage('Information'); return false;"
-        >Information 3D-Scanning/Printing</a 
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <a href="#" onclick="showPage('home'); return false;">Home</a>
+      <a href="#" onclick="showPage('information'); return false;"
+        >Information 3D-Scanning/Printing</a
       >
-      <a href="#" onclick="showPage('contact'); return false;">Contact</a> <!-- Länkar till sidorna -->
+      <a href="#" onclick="showPage('contact'); return false;">Contact</a>
     </nav>
 
-    <div id="content" class="container"></div> <!-- Innehåll på sidorna -->
+    <!-- Dynamic Content -->
+    <main id="content" class="container"></main>
 
-    <script> /*Javascript för att visa sidorna*/
-      function showPage(page) { /*Funktion för att visa sidan*/
-        document.getElementById("content").style.opacity = "0"; /*Här visas sidan som valts*/
-        setTimeout(() => { /*Visar sidan efter 0.3 sekunder*/
-          let content = { /*Innehåll på sidorna*/
-            home: ` 
-            
-            
-            
-            <!-- Här börjar sida 1 -->
-            <h1>3D PRINTING</h1><tr> <!-- Rubrik -->
-            <p><Strong>ONLY YOUR IMAGINATION AND KNOWLEDGE CAN STOP IT!!!</strong></p><br><br> <!-- Rubrik -->
+    <!-- Footer -->
+    <footer>
+      <div class="footer-bar">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
+        >
+          <i class="fa-brands fa-facebook fa-2x"></i>
+        </a>
+      </div>
+      <h4>&copy; 2024 3D-Printing Website. All rights reserved</h4>
+      <h4>. Adress: 3D-Tech Street 123, 12345 Lund, Sweden</h4>
+      <h4>. Telephone: +46701234567 | Monday-Friday 08:00-17:00</h4>
+      <div class="footer-bar">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram fa-2x"></i
+        ></a>
+      </div>
+    </footer>
 
-<h2>So what are 3D Printing and 3D Scanning?</h2> <!-- Lista -->
-<p><strong>3D Printing</strong> is a technology that creates three-dimensional objects by building up layers of material based on a digital model.<br>
-This enables rapid and customized manufacturing in various industries, including medicine, automotive, and design.</p>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/3b20d96fa9.js"
+      crossorigin="anonymous"
+    ></script>
 
-<p><strong>3D Scanning</strong> is used to digitize physical objects by creating an accurate digital representation. It is often used in reverse engineering,<br>
- medical research, art conservation, and industrial applications.</p><br>
+    <!-- Main Script -->
+    <script>
+      function showPage(page) {
+        const contentDiv = document.getElementById("content");
+        contentDiv.style.opacity = "0";
 
+        // Highlight active nav link
+        document.querySelectorAll("nav a").forEach((link) => {
+          link.classList.remove("active");
+          if (link.textContent.toLowerCase().includes(page)) {
+            link.classList.add("active");
+          }
+        });
 
+        setTimeout(() => {
+          fetch(`partials/${page}.html`)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Page not found");
+              }
+              return response.text();
+            })
+            .then((data) => {
+              contentDiv.innerHTML = data;
+              contentDiv.style.opacity = "1";
 
-<h2>How does the technology work?</h2> <!-- List -->
-<ul>
-<li><strong>FDM (Fused Deposition Modeling):</strong><p>Melts and extrudes plastic filament layer by layer.</p></li></ul>
-                        
- <!-- Bilderna som visas på sidan -->
-<div class="inblock">
-<img src="assets/images/fdm-printer.jpg" alt="fdm-printer"> <img src="assets/images/fdm-material.jpg" alt="filament"> <img src="assets/images/fdm-finished.jpg" alt="locomotive train">
-<div class="caption"><p><strong>Example of FDM Printer then regular PLA FDM Plastic filament to a finished product. In this picture a locomotive</strong></p><br>
+              // If on contact page, reattach form logic
+              if (page === "contact") {
+                setupContactForm();
+              }
+            })
+            .catch((error) => {
+              contentDiv.innerHTML =
+                "<p>Error loading content. Please try again later.</p>";
+              contentDiv.style.opacity = "1";
+              console.error(error);
+            });
+        }, 300);
+      }
 
-<ul><li><strong>SLA (Stereolithography):</strong><p> Hardens liquid resin with a laser.</p></li></ul>
-<div class="inblock">
-<img src="assets/images/sla-printer.jpg" alt="sla-printer"> <img src="assets/images/sla-material.jpg" alt="sla-material"> <img src="assets/images/sla-finished.jpg" alt="sla-finished">
-<div class="caption"><p><strong>A common affordable SLA printer, where liquid material is used and finally a finished detailed product.</strong></p><br>
+      function setupContactForm() {
+        const form = document.getElementById("contactForm");
+        if (!form) return;
 
-<ul><li><strong>SLS (Selective Laser Sintering):</strong><p>Uses a laser to melt powder material and create detailed objects.</p></li>
-</ul>
-<div class="inblock">
-<img src="assets/images/sls-printer.jpg" alt="sls-printer"> <img src="assets/images/sls-material.jpg" alt="sls-material"> <img src="assets/images/sls-finished.jpg" alt="sls-finished">
-<div class="caption"><p style='color: red;'><strong>SLS Printers are most common for companies. The material for this machine is powder and yes, you can see the result yourself.</strong></p><br>
+        form.onsubmit = function () {
+          const captcha = document.getElementById("captcha").value.trim();
+          if (captcha !== "7") {
+            alert(
+              "Incorrect response to SPAM check (3 + 4). Please try again."
+            );
+            return false;
+          }
 
-<h2>Applications</h2> 
-<p>3D technology is used in a number of areas:</p>
-<ul>
-<li><strong>Medicine:</strong><p>Prosthetics, implants and anatomical models.</p></li> <!-- List -->
-<li><strong>Industry:</strong><p>Prototypes and custom tools.</p></li>
-<li><strong>Art and design:</strong><p>Sculptures, fashion and custom-designed products.</p></li>
-<li><strong>Architecture:</strong><p>Creating models for building projects.</p></li>
-</ul>
-                
-                `,
-            Information: ` 
-            
-            
-            <!-- Här börjar sida 2 -->
-                    
-           <h1>Workflow for “3D Scanned Object to 3D Printable File”</h1>
+          document.getElementById("confirmation").style.display = "block";
 
-<p>When an object has been scanned, you get a mesh file, a shell of the scanned surface consisting of reference points that form triangles.<br> The file is imported into the program, such as Fusion 360, where you need to review any missed data that can generate holes in the mesh,<br>
-or direct errors in the depicted scan. There may also be unwanted scanned material from the environment that needs to be cleaned away.<br>
-Once the file is repaired and the mesh is cleaned and intact, it is simply saved as a .stl file and imported into the slicer program.<br>
-In the slicer program, you select the settings you want and save as a .gcode file. That file contains settings for the printer,<br>
-such as temperature, speed, feed and coordinates in X-Y-Z directions that the printer then follows.</p><br>
-                    
-<h2>Differences between iPad, Artec and ATOS scanners</h2>
-<p>We tested scanning with iPad, Artec Eva and Atos scanner, and functionally the scanning works in a similar way.<br>
-You photograph the object from the sides you want to include. With an <Strong>iPad or iPhone/Android</strong> phone you can now scan objects,<br>
-and get a result that is suitable for simpler modeling, such as smaller sculptures, busts or things with less accuracy.<br>
-<em>Area of ​​use:</em> Most suitable for simpler images for e.g. home users or where the object is less detailed.</p>
-                     
-<!-- The images displayed on the page -->
-<div class="inblock">
-<img src="assets/images/clone.jpg" alt="clone"> <img src="assets/images/clone-2.jpg" alt="clone-2">
-<div class="caption"><p><strong>Scanning with iPhone and the </strong><em>Qlone</em></p></div> App
-</div><br>
-<p><strong>Artec Eva</strong> is a handheld scanner that delivers very good results with an accuracy of up to 0.1mm,<br>
-and is suitable for medium to large objects. You scan the object by moving the scanner over or around it until all surfaces are scanned.<br>
-The scanner takes pictures continuously and you have to try to scan quickly but at the same time get all angles, which requires practice.<br> 
-Because the scanner is constantly collecting data in the images, the files can become very heavy if you are too slow.<br>
-With such a scanner you get a high level of detail, but it is required that the object is completely still during the process.<br>
-<em>Area of ​​use:</em>
-For professional use, for medium-sized objects, easy and fast use with high detail, create virtual 3D models,<br>
-art, design, healthcare, easy to take into the field, also reverse engineering.</p>
-<p><strong>Atos</strong> scanner differs from previous scanners in that the scanner is mounted and you spin the object and take a<br>
-still image/scan and then rotate the object and take a new image and repeat until you cover all angles<br>
-<strong>Atos</strong> can also be mounted on a robot which then takes the images around the object from the angles required. 
-It has high accuracy, Up to 0.02mm.<br>
-<em>Area of ​​use:</em> 
-Reverse engineering, inspections/analyses, measurement and controls.</p>
+          setTimeout(() => {
+            document.getElementById("confirmation").style.display = "none";
+            document.getElementById("contactForm").reset();
+            document.getElementById("content").classList.add("fade-transition");
+            showPage("home");
+            setTimeout(() => {
+              document
+                .getElementById("content")
+                .classList.remove("fade-transition");
+            }, 1000);
+          }, 2000);
 
- <!-- The images shown on the page -->
-<div class="inblock">
-<img src="assets/images/artec.jpg" alt="artec-scanner"> <img src="assets/images/atos.jpg" alt="atos-scanner">
-<div class="caption"><p><strong>Scanning with Artec and Atos scanners</strong></p></div>
-</div><br>
-
-<h2>Comparison of scanned object (stl) with CAD file (stl or stp).</h2> <!-- List -->
-<p>A scanned file contains measurement points from the scanned object, these measurement points form triangles like a net, a mesh.<br>
-It therefore has no actual surface or content, but all points have a reference in the coordinate system.<br> 
-Actually, a mesh object lacks a lot of data as it is only these points that have a coordinate in the file's coordinate system,<br>
-which have a reference and it depends on the resolution, the point density/size of the triangles, how detailed the file is.<br> 
-A CAD file forms a solid model and thus has volume and fixed references everywhere, you can extract all the data you want from the CAD file.</p>
-
- <!-- The images shown on the page -->
-<div class="inblock">
-<img src="assets/images/mesh-file-hollow.jpg" alt="mesh-file-hollow"> <img src="assets/images/stp-file-solid.jpg" alt="stp-file-solid">
-<div class="caption"><p><strong>Mesh file hollow see image left. .stp file, i.e. solid image right</strong></p></div><br>
-
-<h2>Work process and area of ​​application.</h2> <!-- List -->
-<p>In a measurement program, such as GOM Inspect, you can import both the scanned geometry and the original CAD file.
-You can combine both geometries and measure deviations and possible defects in the manufactured part. 
-You can easily measure deviations on small surfaces and details and also the<br> total deviation of the part as a whole. 
-In the manufacturing industry, this method can be used for quality assurance
-and very small deviations can be detected.</p>
-
-<!-- The images displayed on the page -->
-<div class="inblock">
-<img src="assets/images/gom-inspect.jpg" alt="gom-inspect">
-<div class="caption">
-<p><strong>Example of measurement data in GOM Inspect</strong></p>
-</div><br>
-<h2>Industries 3D Scanning</h2> <!-- List -->
-<p>A few examples of industries where 3D scanning is used today are:</p> <!-- List -->
-
-<ul> <!-- List -->
-<li><strong>Manufacturing industry:</strong><p>Control/quality assurance, reverse engineering, prototyping, CAD construction.</p></li>
-<li><strong>Architecture.</strong></li>
-<li><strong>Healthcare:</strong><p>Orthopedics, prosthetics, plastic surgery, personalized aids and products.</p></li>
-<li><strong>Design/fashion:</strong><p>Development of VR/AR environments, creation of e.g. clothes and furniture.</p></li>
-<li><strong>Archaeology:</strong><p>Preservation of cultural heritage and ancient remains, creation of copies or virtual environments.</p></li>
-<li><strong>CSI, crime scene investigations:</strong><p>Scanning of crime scenes, objects or direct damage.</p></li>
-<li><strong>Automotive industry:</strong><p>Quality assurance in the manufacturing process, design of new models, analyses and simulations.</p></li>
-<li><strong>Construction:</strong><p>Scanning of premises, surfaces and even landscapes.</p></li>
-</ul>
-</li>
-  
-  
- `,  
-         // Contact Form Page3
-contact: `
-<h1>Contact me</h1>
-<p>Do you have questions about 3D printing or Scanning? Don't hesitate to contact us!</p> <!-- Contact form -->
-<form id="contactForm" onsubmit="return showConfirmation();"> <!-- Can be replaced with a physical server like formspree -->
-<label for="name">Name:</label> <!-- Requires at least 2 letters -->
-<input type="text" id="name" name="name" required pattern="[A-Za-zÅÄÖåäö\s-]+" minlength="2" title="Only letters allowed" /> <!-- Requires at least 2 letters -->
-<label for="email">Email:</label> <!-- Requires a valid email address -->
-<input type="email" id="email" name="email" required /> <!-- Requires a valid email address -->
-<label for="message">Message:</label> <!-- Requires at least 10 letters -->
-             <textarea id="message" name="message" rows="4" required></textarea> 
-<label for="captcha">What is 3 + 4? (SPAM control)</label> <!-- SPAM control -->
-<input type="text" id="captcha" required autocomplete="off" /> <!-- SPAM control -->
-<button type="submit">Submit</button> <!-- Submit form -->
-</form>
-<div id="confirmation" style="display:none; color: limegreen; font-weight: bold; margin-top: 20px;"> <!-- Confirmation message -->
-✅ Thank you! Your message has been sent. <!-- Confirmation message -->
-</div>
-          `
+          return false;
         };
-document.getElementById("content").innerHTML = content[page]; /*The selected page is displayed here*/
-document.getElementById("content").style.opacity = "1"; /*The selected page is displayed here*/
-}, 300); /*number of seconds the page is displayed*/
-}
+      }
 
-function showConfirmation() { /*Function to submit the form*/
-const captcha = document.getElementById("captcha").value.trim(); /*Gets the captcha value*/
-if (captcha !== "7") { /*If captcha is not 7, an error message is displayed*/
-alert("Incorrect response to SPAM check (3 + 4). Please try again."); /*Error message*/
-return false; /*Prevents the form from being sent to the server*/
-}
-document.getElementById("confirmation").style.display = "block"; /*Shows the confirmation*/
-setTimeout(() => { /*Shows the confirmation for 2 seconds*/
-document.getElementById("confirmation").style.display = "none"; /*Shows the confirmation*/ 
-document.getElementById("contactForm").reset(); /*Resets the form*/
-document.getElementById("content").classList.add("fade-transition"); /*Adds a fade-transition*/
-showPage('home'); /*Returns to the main menu*/
-        
-setTimeout(() => { /*Shows confirmation for 1 second*/
-document.getElementById("content").classList.remove("fade-transition"); /*Removes fade-transition*/
-}, 1000); /*number of seconds the confirmation is displayed*/
-}, 2000); /*number of seconds the confirmation is displayed*/
-return false; // Prevents the form from being sent to the server
-}
-
-    document.addEventListener("DOMContentLoaded", function () { /*Visar huvudmenyn*/
-      showPage('home');/*återgår till huvudmenyn efter sekunderna*/
-    });
-  </script>
-
-<footer>
-  <div class="footer-bar">
-    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
-      <i class="fa-brands fa-facebook fa-2x"></i>
-    </a></div>
-<h4>&copy; 2024 3D-Printing Website. All rights reserved</h4>
-    <h4>. Adress: 3D-Tech Street 123, 12345 Lund, Sweden</h4>
-    <h4>. Telephone: +46701234567 | Monday-Friday 08:00-17:00</h4>
-    <div class="footer-bar">
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-    <i class="fa-brands fa-instagram fa-2x"></i></a>
-</div>
-</footer>
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
-</body>
+      // Load Home on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        showPage("home");
+      });
+    </script>
+  </body>
 </html>
