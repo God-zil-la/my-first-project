@@ -206,10 +206,7 @@ li {
 }
 
 /* Typography */
-ul,
-li,
-strong,
-em {
+ul, li, strong, em {
   color: #ff894d;
 }
 
@@ -220,8 +217,10 @@ h2 {
 
 /* Paragraph Styling */
 p {
+  color: gold;
   font-size: 18px; /* Font size */
   line-height: 1.8; /* Line height */
+  
 }
 
 h1 {
@@ -314,7 +313,7 @@ textarea {
   margin: 10px 0;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: #222;
   color: gold;
 }
