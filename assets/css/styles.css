@@ -77,6 +77,9 @@ header, nav, footer {
   text-align: center;
   border-bottom: none;
 }
+nav {
+  border-bottom: 2px solid gold; 
+}
 
 nav a { 
   margin: 10px;
@@ -87,7 +90,8 @@ nav a {
   transition: color 0.3s;
 }
 nav a:hover { 
-  color: white; 
+  color: gold;
+  border-bottom: 2px solid gold; 
 }
 
 footer * {
