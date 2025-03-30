@@ -1,12 +1,32 @@
 let currentLanguage = localStorage.getItem("language") || "en";
 
 function setLanguage(lang) {
-  currentLanguage = lang;
-  localStorage.setItem("language", lang);
-  updateStaticContent();
-  updateDynamicContent();
-}
-
+    currentLanguage = lang;
+    localStorage.setItem("language", lang);
+  
+    const contentDiv = document.getElementById("content");
+  
+    if (contentDiv) {
+      contentDiv.classList.remove("fade-in"); // 👈 make sure to remove it first
+      contentDiv.classList.add("fade-out");
+  
+      setTimeout(() => {
+        updateStaticContent();
+        updateDynamicContent();
+  
+        contentDiv.classList.remove("fade-out");
+        contentDiv.classList.add("fade-in");
+  
+        // Remove fade-in after animation ends
+        setTimeout(() => {
+          contentDiv.classList.remove("fade-in");
+        }, 500);
+      }, 300);
+    } else {
+      updateStaticContent();
+      updateDynamicContent();
+    }
+  }
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("language-toggle")?.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {

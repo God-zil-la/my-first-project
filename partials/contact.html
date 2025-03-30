@@ -15,8 +15,7 @@
       pattern="[A-Za-zÅÄÖåäö\s-]+"
       minlength="2"
       title="Please enter only letters and spaces"
-      placeholder="Your name"
-    />
+      placeholder="Your name">
 
     <label for="email" id="label-email">Email:</label>
     <input
@@ -24,8 +23,7 @@
       id="email"
       name="email"
       required
-      placeholder="Your email"
-    />
+      placeholder="Your email">
 
     <label for="message" id="label-message">Message:</label>
     <textarea
@@ -34,19 +32,17 @@
       rows="4"
       required
       minlength="10"
-      placeholder="Your message"
-    ></textarea>
+      placeholder="Your message"></textarea>
 
     <label for="captcha" id="label-captcha">What is 3 + 4? (Anti-spam check)</label>
-    <input type="text" id="captcha" required autocomplete="off" />
+    <input type="text" id="captcha" required autocomplete="off">
 
     <button type="submit" id="submit-btn">Submit</button>
   </form>
 
   <div
     id="confirmation"
-    style="display: none; color: limegreen; font-weight: bold; margin-top: 20px"
-  >
+    style="display: none; color: limegreen; font-weight: bold; margin-top: 20px">
     ✅ Thank you! Your message has been sent.
   </div>
 </section>
