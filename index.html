@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Printing & Scanning</title>
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css">
   </head>
 
   <body>
+    <!-- Navigation -->
     <nav>
       <div id="language-toggle">
         <button onclick="setLanguage('en')">English</button>
         <button onclick="setLanguage('sv')">Svenska</button>
       </div>
-      <a id="nav-home" href="#" onclick="showPage('home'); return false;">Home</a>
-      <a id="nav-info" href="#" onclick="showPage('information'); return false;">Information</a>
-      <a id="nav-contact" href="#" onclick="showPage('contact'); return false;">Contact</a>
+      <a href="#" onclick="showPage('home'); return false;">Home</a>
+      <a href="#" onclick="showPage('information'); return false;"
+        >Information 3D-Scanning/Printing</a
+      >
+      <a href="#" onclick="showPage('contact'); return false;">Contact</a>
     </nav>
+
     <!-- Dynamic Content -->
     <main id="content" class="container"></main>
 
     <!-- Footer -->
     <footer>
       <div class="footer-bar">
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
+        >
           <i class="fa-brands fa-facebook fa-2x"></i>
         </a>
       </div>
-      <h4 id="footer-text-1">&copy; 2024 3D-Printing Website. All rights reserved</h4>
-      <h4 id="footer-text-2">Adress: 3D-Tech Street 123, 12345 Lund, Sweden</h4>
-      <h4 id="footer-text-3">Telephone: +46701234567 | Monday-Friday 08:00-17:00</h4>
+      <h4>&copy; 2024 3D-Printing Website. All rights reserved</h4>
+      <h4>. Adress: 3D-Tech Street 123, 12345 Lund, Sweden</h4>
+      <h4>. Telephone: +46701234567 | Monday-Friday 08:00-17:00</h4>
       <div class="footer-bar">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-          <i class="fa-brands fa-instagram fa-2x"></i>
-        </a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram fa-2x"></i
+        ></a>
       </div>
     </footer>
 
@@ -49,6 +63,7 @@
         const contentDiv = document.getElementById("content");
         contentDiv.style.opacity = "0";
 
+        // Highlight active nav link
         document.querySelectorAll("nav a").forEach((link) => {
           link.classList.remove("active");
           if (link.textContent.toLowerCase().includes(page)) {
@@ -57,7 +72,7 @@
         });
 
         setTimeout(() => {
-          fetch(`partials/${page}.html`)
+          fetch(partials/${page}.html)
             .then((response) => {
               if (!response.ok) {
                 throw new Error("Page not found");
@@ -67,14 +82,15 @@
             .then((data) => {
               contentDiv.innerHTML = data;
               contentDiv.style.opacity = "1";
-              updateDynamicContent();
 
+              // If on contact page, reattach form logic
               if (page === "contact") {
                 setupContactForm();
               }
             })
             .catch((error) => {
-              contentDiv.innerHTML = "<p>Error loading content. Please try again later.</p>";
+              contentDiv.innerHTML =
+                "<p>Error loading content. Please try again later.</p>";
               contentDiv.style.opacity = "1";
               console.error(error);
             });
@@ -88,7 +104,9 @@
         form.onsubmit = function () {
           const captcha = document.getElementById("captcha").value.trim();
           if (captcha !== "7") {
-            alert("Incorrect response to SPAM check (3 + 4). Please try again.");
+            alert(
+              "Incorrect response to SPAM check (3 + 4). Please try again."
+            );
             return false;
           }
 
@@ -100,7 +118,9 @@
             document.getElementById("content").classList.add("fade-transition");
             showPage("home");
             setTimeout(() => {
-              document.getElementById("content").classList.remove("fade-transition");
+              document
+                .getElementById("content")
+                .classList.remove("fade-transition");
             }, 1000);
           }, 2000);
 
@@ -108,9 +128,9 @@
         };
       }
 
+      // Load Home on page load
       document.addEventListener("DOMContentLoaded", () => {
         showPage("home");
-        updateStaticContent();
       });
     </script>
   </body>

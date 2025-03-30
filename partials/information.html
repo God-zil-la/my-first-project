@@ -1,115 +1,81 @@
-<section>
-    <h1 id="info-title">Workflow for “3D Scanned Object to 3D Printable File”</h1>
-  
-    <p id="info-workflow">
-      When an object has been scanned, you get a mesh file, a shell of the scanned surface consisting of reference points that form triangles.
-      The file is imported into the program, such as Fusion 360, where you need to review any missed data that can generate holes in the mesh,
-      or direct errors in the depicted scan. There may also be unwanted scanned material from the environment that needs to be cleaned away.
-      Once the file is repaired and the mesh is cleaned and intact, it is simply saved as a .stl file and imported into the slicer program.
-      In the slicer program, you select the settings you want and save as a .gcode file. That file contains settings for the printer,
-      such as temperature, speed, feed and coordinates in X-Y-Z directions that the printer then follows.
-    </p>
-  
-    <h2 id="info-scanner-diff-title">Differences between iPad, Artec and ATOS scanners</h2>
-  
-    <p id="info-ipad">
-      We tested scanning with iPad, Artec Eva and Atos scanner, and functionally the scanning works in a similar way.
-      You photograph the object from the sides you want to include. With an <strong>iPad or iPhone/Android</strong> phone
-      you can now scan objects, and get a result that is suitable for simpler modeling, such as smaller sculptures,
-      busts or things with less accuracy.
-      <em>Area of use:</em> Most suitable for simpler images for e.g. home users or where the object is less detailed.
-    </p>
-  
-    <div class="inblock">
-      <img src="assets/images/clone.jpg" alt="clone" />
-      <img src="assets/images/clone-2.jpg" alt="clone-2" />
-      <div class="caption" id="info-caption-ipad">
-        <p><strong>Scanning with iPhone and the </strong><em>Qlone</em> App</p>
-      </div>
-    </div>
-  
-    <p id="info-artec">
-      <strong>Artec Eva</strong> is a handheld scanner that delivers very good results with an accuracy of up to 0.1mm,
-      and is suitable for medium to large objects. You scan the object by moving the scanner over or around it until all surfaces are scanned.
-      The scanner takes pictures continuously and you have to try to scan quickly but at the same time get all angles, which requires practice.
-      Because the scanner is constantly collecting data in the images, the files can become very heavy if you are too slow.
-      <em>Area of use:</em> Professional use: virtual 3D models, art, design, healthcare, and reverse engineering.
-    </p>
-  
-    <p id="info-atos">
-      <strong>Atos</strong> scanner differs from previous scanners in that the scanner is mounted and you spin the object and take a
-      still image/scan and then rotate the object and take a new image and repeat until you cover all angles.
-      It can also be mounted on a robot. It has high accuracy, up to 0.02mm.
-      <em>Area of use:</em> Reverse engineering, inspections/analyses, measurement and controls.
-    </p>
-  
-    <div class="inblock">
-      <img src="assets/images/artec.jpg" alt="artec-scanner" />
-      <img src="assets/images/atos.jpg" alt="atos-scanner" />
-      <div class="caption" id="info-caption-artec">
-        <p><strong>Scanning with Artec and Atos scanners</strong></p>
-      </div>
-    </div>
-  
-    <h2 id="info-comparison-title">Comparison of scanned object (stl) with CAD file (stl or stp)</h2>
-  
-    <p id="info-comparison">
-      A scanned file contains measurement points from the scanned object, these form triangles like a net (mesh).
-      It has no actual surface or volume, only coordinate references. The detail level depends on point density and triangle size.
-      A CAD file forms a solid model and has full volume and references, allowing complete data extraction.
-    </p>
-  
-    <div class="inblock">
-      <img src="assets/images/mesh-file-hollow.jpg" alt="mesh-file-hollow" />
-      <img src="assets/images/stp-file-solid.jpg" alt="stp-file-solid" />
-      <div class="caption" id="info-caption-mesh">
-        <p><strong>Mesh file (hollow) left. Solid .stp file on the right.</strong></p>
-      </div>
-    </div>
-  
-    <h2 id="info-process-title">Work process and area of application</h2>
-  
-    <p id="info-gom">
-      In a measurement program, such as GOM Inspect, you can import both the scanned geometry and the original CAD file.
-      You can combine both geometries and measure deviations and possible defects in the manufactured part.
-      This helps ensure precision in production and quality control.
-    </p>
-  
-    <div class="inblock">
-      <img src="assets/images/gom-inspect.jpg" alt="gom-inspect" />
-      <div class="caption" id="info-caption-gom">
-        <p><strong>Example of measurement data in GOM Inspect</strong></p>
-      </div>
-    </div>
-  
-    <h2 id="info-industries-title">Industries Using 3D Scanning</h2>
-  
-    <p id="info-industries-intro">
-      A few examples of industries where 3D scanning is used today are:
-    </p>
-  
-    <ul>
-      <li><strong>Manufacturing:</strong>
-        <p id="industry-manufacturing">Control/quality assurance, reverse engineering, prototyping, CAD construction.</p>
-      </li>
-      <li><strong>Architecture</strong></li>
-      <li><strong>Healthcare:</strong>
-        <p id="industry-health">Orthopedics, prosthetics, plastic surgery, personalized aids and products.</p>
-      </li>
-      <li><strong>Design/Fashion:</strong>
-        <p id="industry-fashion">VR/AR environments, creation of clothes, furniture, etc.</p>
-      </li>
-      <li><strong>Archaeology:</strong>
-        <p id="industry-archaeology">Preserving heritage, ancient remains, making virtual copies or environments.</p>
-      </li>
-      <li><strong>Crime Scene Investigation:</strong>
-        <p id="industry-csi">Scanning scenes, objects, and damage for evidence capture.</p>
-      </li>
-      <li><strong>Automotive:</strong>
-        <p id="industry-auto">Quality checks, new model design, simulation & analysis.</p>
-      </li>
-      <li><strong>Construction:</strong>
-        <p id="industry-construction">Scanning buildings, surfaces, even terrain and landscapes.</p>
-      </li>
-    </ul>
-  </section>
+<h1>Workflow for “3D Scanned Object to 3D Printable File”</h1>
+
+<p>When an object has been scanned, you get a mesh file, a shell of the scanned surface consisting of reference points that form triangles.<br> The file is imported into the program, such as Fusion 360, where you need to review any missed data that can generate holes in the mesh,<br>
+or direct errors in the depicted scan. There may also be unwanted scanned material from the environment that needs to be cleaned away.<br>
+Once the file is repaired and the mesh is cleaned and intact, it is simply saved as a .stl file and imported into the slicer program.<br>
+In the slicer program, you select the settings you want and save as a .gcode file. That file contains settings for the printer,<br>
+such as temperature, speed, feed and coordinates in X-Y-Z directions that the printer then follows.</p><br>
+                    
+<h2>Differences between iPad, Artec and ATOS scanners</h2>
+<p>We tested scanning with iPad, Artec Eva and Atos scanner, and functionally the scanning works in a similar way.<br>
+You photograph the object from the sides you want to include. With an <Strong>iPad or iPhone/Android</strong> phone you can now scan objects,<br>
+and get a result that is suitable for simpler modeling, such as smaller sculptures, busts or things with less accuracy.<br>
+<em>Area of ​​use:</em> Most suitable for simpler images for e.g. home users or where the object is less detailed.</p>
+                     
+<!-- The images displayed on the page -->
+<div class="inblock">
+<img src="assets/images/clone.jpg" alt="clone"> <img src="assets/images/clone-2.jpg" alt="clone-2">
+<div class="caption"><p><strong>Scanning with iPhone and the </strong><em>Qlone</em></p></div> App
+</div><br>
+<p><strong>Artec Eva</strong> is a handheld scanner that delivers very good results with an accuracy of up to 0.1mm,<br>
+and is suitable for medium to large objects. You scan the object by moving the scanner over or around it until all surfaces are scanned.<br>
+The scanner takes pictures continuously and you have to try to scan quickly but at the same time get all angles, which requires practice.<br> 
+Because the scanner is constantly collecting data in the images, the files can become very heavy if you are too slow.<br>
+With such a scanner you get a high level of detail, but it is required that the object is completely still during the process.<br>
+<em>Area of ​​use:</em>
+For professional use, for medium-sized objects, easy and fast use with high detail, create virtual 3D models,<br>
+art, design, healthcare, easy to take into the field, also reverse engineering.</p>
+<p><strong>Atos</strong> scanner differs from previous scanners in that the scanner is mounted and you spin the object and take a<br>
+still image/scan and then rotate the object and take a new image and repeat until you cover all angles<br>
+<strong>Atos</strong> can also be mounted on a robot which then takes the images around the object from the angles required. 
+It has high accuracy, Up to 0.02mm.<br>
+<em>Area of ​​use:</em> 
+Reverse engineering, inspections/analyses, measurement and controls.</p>
+
+ <!-- The images shown on the page -->
+<div class="inblock">
+<img src="assets/images/artec.jpg" alt="artec-scanner"> <img src="assets/images/atos.jpg" alt="atos-scanner">
+<div class="caption"><p><strong>Scanning with Artec and Atos scanners</strong></p></div>
+</div><br>
+
+<h2>Comparison of scanned object (stl) with CAD file (stl or stp).</h2> <!-- List -->
+<p>A scanned file contains measurement points from the scanned object, these measurement points form triangles like a net, a mesh.<br>
+It therefore has no actual surface or content, but all points have a reference in the coordinate system.<br> 
+Actually, a mesh object lacks a lot of data as it is only these points that have a coordinate in the file's coordinate system,<br>
+which have a reference and it depends on the resolution, the point density/size of the triangles, how detailed the file is.<br> 
+A CAD file forms a solid model and thus has volume and fixed references everywhere, you can extract all the data you want from the CAD file.</p>
+
+ <!-- The images shown on the page -->
+<div class="inblock">
+<img src="assets/images/mesh-file-hollow.jpg" alt="mesh-file-hollow"> <img src="assets/images/stp-file-solid.jpg" alt="stp-file-solid">
+<div class="caption"><p><strong>Mesh file hollow see image left. .stp file, i.e. solid image right</strong></p></div><br>
+
+<h2>Work process and area of ​​application.</h2> <!-- List -->
+<p>In a measurement program, such as GOM Inspect, you can import both the scanned geometry and the original CAD file.
+You can combine both geometries and measure deviations and possible defects in the manufactured part. 
+You can easily measure deviations on small surfaces and details and also the<br> total deviation of the part as a whole. 
+In the manufacturing industry, this method can be used for quality assurance
+and very small deviations can be detected.</p>
+
+<!-- The images displayed on the page -->
+<div class="inblock">
+<img src="assets/images/gom-inspect.jpg" alt="gom-inspect">
+<div class="caption">
+<p><strong>Example of measurement data in GOM Inspect</strong></p>
+</div><br>
+<h2>Industries 3D Scanning</h2> <!-- List -->
+<p>A few examples of industries where 3D scanning is used today are:</p> <!-- List -->
+
+<ul> <!-- List -->
+<li><strong>Manufacturing industry:</strong><p>Control/quality assurance, reverse engineering, prototyping, CAD construction.</p></li>
+<li><strong>Architecture.</strong></li>
+<li><strong>Healthcare:</strong><p>Orthopedics, prosthetics, plastic surgery, personalized aids and products.</p></li>
+<li><strong>Design/fashion:</strong><p>Development of VR/AR environments, creation of e.g. clothes and furniture.</p></li>
+<li><strong>Archaeology:</strong><p>Preservation of cultural heritage and ancient remains, creation of copies or virtual environments.</p></li>
+<li><strong>CSI, crime scene investigations:</strong><p>Scanning of crime scenes, objects or direct damage.</p></li>
+<li><strong>Automotive industry:</strong><p>Quality assurance in the manufacturing process, design of new models, analyses and simulations.</p></li>
+<li><strong>Construction:</strong><p>Scanning of premises, surfaces and even landscapes.</p></li>
+</ul>
+</li>
+
+
