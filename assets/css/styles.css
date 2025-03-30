@@ -326,17 +326,16 @@
 
   #content {
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease-in-out;
   }
 
   .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease;
   }
   
   .fade-in {
     opacity: 1;
-    transition: opacity 0.5s ease;
+    
   }
   
   button:hover {

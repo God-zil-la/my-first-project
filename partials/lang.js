@@ -7,21 +7,23 @@ function setLanguage(lang) {
     const contentDiv = document.getElementById("content");
   
     if (contentDiv) {
-      contentDiv.classList.remove("fade-in"); // 👈 make sure to remove it first
+        
       contentDiv.classList.add("fade-out");
   
+      /*wait for fade-out before updating */
       setTimeout(() => {
         updateStaticContent();
         updateDynamicContent();
-  
+ 
+        /*fade-in after content changes */
         contentDiv.classList.remove("fade-out");
         contentDiv.classList.add("fade-in");
   
         // Remove fade-in after animation ends
         setTimeout(() => {
           contentDiv.classList.remove("fade-in");
-        }, 500);
-      }, 300);
+        }, 400);
+      }, 400);
     } else {
       updateStaticContent();
       updateDynamicContent();
