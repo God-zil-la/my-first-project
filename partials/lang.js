@@ -45,48 +45,44 @@ const content = {
 
 let currentLanguage = localStorage.getItem("language") || "en";
 
-function setLanguage(lang) {
-  currentLanguage = lang;
-  localStorage.setItem("language", lang);
-  updateStaticContent();
-  updateDynamicContent();
-}
-
-function updateStaticContent() {
-  const text = content[currentLanguage];
-  document.getElementById("nav-home").innerText = text.navHome;
-  document.getElementById("nav-info").innerText = text.navInfo;
-  document.getElementById("nav-contact").innerText = text.navContact;
-  document.getElementById("footer-text-1").innerText = text.footerText;
-  document.getElementById("footer-text-2").innerText = "Adress: 3D-Tech Street 123, 12345 Lund, Sweden";
-  document.getElementById("footer-text-3").innerText = "Telephone: +46701234567 | Monday-Friday 08:00-17:00";
-}
-
 function updateDynamicContent() {
   const text = content[currentLanguage];
 
-  if (document.getElementById("home-title")) {
+  // Home Page
+  if (document.getElementById("home-title"))
     document.getElementById("home-title").innerText = text.homeTitle;
+  if (document.getElementById("home-description"))
     document.getElementById("home-description").innerText = text.homeDescription;
-  }
 
-  if (document.getElementById("info-title")) {
+  // Info Page
+  if (document.getElementById("info-title"))
     document.getElementById("info-title").innerText = text.infoTitle;
+  if (document.getElementById("info-description"))
     document.getElementById("info-description").innerText = text.infoDescription;
-  }
 
-  if (document.getElementById("contact-title")) {
+  // Contact Page
+  if (document.getElementById("contact-title"))
     document.getElementById("contact-title").innerText = text.contactTitle;
+  if (document.getElementById("contact-description"))
     document.getElementById("contact-description").innerText = text.contactDescription;
-  }
+  if (document.getElementById("label-name"))
+    document.getElementById("label-name").innerText = text.labelName;
+  if (document.getElementById("label-email"))
+    document.getElementById("label-email").innerText = text.labelEmail;
+  if (document.getElementById("label-message"))
+    document.getElementById("label-message").innerText = text.labelMessage;
+  if (document.getElementById("label-captcha"))
+    document.getElementById("label-captcha").innerText = text.labelCaptcha;
 
-  if (document.getElementById("label-name")) document.getElementById("label-name").innerText = text.labelName;
-  if (document.getElementById("label-email")) document.getElementById("label-email").innerText = text.labelEmail;
-  if (document.getElementById("label-message")) document.getElementById("label-message").innerText = text.labelMessage;
+  if (document.getElementById("name"))
+    document.getElementById("name").placeholder = text.placeholderName;
+  if (document.getElementById("email"))
+    document.getElementById("email").placeholder = text.placeholderEmail;
+  if (document.getElementById("message"))
+    document.getElementById("message").placeholder = text.placeholderMessage;
 
-  if (document.getElementById("name")) document.getElementById("name").placeholder = text.placeholderName;
-  if (document.getElementById("email")) document.getElementById("email").placeholder = text.placeholderEmail;
-  if (document.getElementById("message")) document.getElementById("message").placeholder = text.placeholderMessage;
-
-  if (document.getElementById("submit-btn")) document.getElementById("submit-btn").innerText = text.submitBtn;
+  if (document.getElementById("submit-btn"))
+    document.getElementById("submit-btn").innerText = text.submitBtn;
+  if (document.getElementById("confirmation"))
+    document.getElementById("confirmation").innerText = text.confirmationMsg;
 }
