@@ -11,8 +11,8 @@
     <!-- Navigation -->
     <nav>
       <div id="language-toggle">
-        <button onclick="setLanguage('en')">English</button>
-        <button onclick="setLanguage('sv')">Svenska</button>
+        <a id="lang-english" href="#" onclick="setLanguage('en'); return false;">English</a>
+        <a id="lang-svenska" href="#" onclick="setLanguage('sv'); return false;">Svenska</a>
       </div>
       <a id="nav-home" href="#" onclick="showPage('home'); return false;">Home</a>
       <a id="nav-info" href="#" onclick="showPage('information'); return false;">Information</a>

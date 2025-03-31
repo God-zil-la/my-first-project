@@ -310,8 +310,8 @@
   }
   
   button {
-    background-color: #ff5733;
-    color: white;
+    background-color: black;
+    color: BLACK;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
@@ -324,6 +324,42 @@
     transition: background 0.3s, transform 0.2s, -webkit-transform 0.2s;
   }
 
+ #language-toggle {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the buttons inside the toggle */
+#language-toggle button {
+  background-color: #ff5733;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover effect */
+#language-toggle button:hover {
+  background-color: #ffbd69;
+  color: black;
+  transform: scale(1.05);
+}
+  
+  /* Desktop: float to the left */
+  @media (min-width: 768px) {
+    #language-toggle {
+      position: absolute;
+      left: 20px;
+      top: center;
+    }
+  }
   #content {
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
@@ -335,7 +371,7 @@
   
   .fade-in {
     opacity: 1;
-    
+
   }
   
   button:hover {
