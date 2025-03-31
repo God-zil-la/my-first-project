@@ -47,8 +47,9 @@ nav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 34px;
+  font-size: 2.125rem;
   transition: color 0.3s;
+  border-bottom: 2px solid #ffd70000;
 }
 
 nav a:hover {
@@ -102,20 +103,20 @@ li {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 3.75rem;
   margin-bottom: 20px;
   color: #ff5733;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   margin-bottom: 15px;
   color: #ff5733;
 }
 
 p {
   color: gold;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.8;
 }
 
@@ -181,7 +182,7 @@ textarea:focus {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -206,7 +207,7 @@ textarea:focus {
   font-weight: bold;
   border: none;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 0.6315rem;
   border-radius: 8px;
   transition: background 0.3s, transform 0.2s;
 }
@@ -253,7 +254,7 @@ textarea:focus {
 }
 
 #confirmation {
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: 10px;
   border: 2px solid limegreen;
   border-radius: 8px;
@@ -285,7 +286,7 @@ textarea:focus {
   }
 
   nav a {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 
   .container {
@@ -306,7 +307,7 @@ textarea:focus {
   p,
   ul,
   li {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   footer {
@@ -316,7 +317,7 @@ textarea:focus {
 
 @media screen and (max-width: 768px) {
   nav a {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .container {
@@ -336,7 +337,7 @@ textarea:focus {
   p,
   ul,
   li {
-    font-size: 15px;
+    font-size: 0.7894rem;
   }
 
   footer {
@@ -346,7 +347,7 @@ textarea:focus {
 
 @media screen and (max-width: 480px) {
   nav a {
-    font-size: 18px;
+    font-size: 1.125rem;
     margin: 5px;
   }
 
@@ -367,11 +368,11 @@ textarea:focus {
   p,
   ul,
   li {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   button {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 10px 20px;
   }
 
@@ -380,7 +381,7 @@ textarea:focus {
   }
 
   h1 {
-    font-size: 38px;
+    font-size: 2.375rem;
   }
 }
 
@@ -392,7 +393,7 @@ textarea:focus {
 
 @media screen and (max-width: 300px) {
   nav a {
-    font-size: 14px;
+    font-size: 0.875rem;
     margin: 4px;
   }
 
@@ -402,16 +403,16 @@ textarea:focus {
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   p,
   li {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .image-container img,
