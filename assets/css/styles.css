@@ -41,7 +41,20 @@ footer {
 
 /* ==== Navigation Styling ==== */
 nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(90deg, #ff5733, #ffbd69);
+  padding: 15px 30px;
   border-bottom: 2px solid gold;
+  width: 100%;
+}
+
+#nav-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 nav a {
@@ -53,6 +66,27 @@ nav a {
   transition: color 0.3s;
   border-bottom: 2px solid #ffd70000;
   
+}
+
+.nav-center {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 2.125rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-center a:hover {
+  color: gold;
+  border-bottom: 2px solid gold;
 }
 
 nav a:hover {
@@ -230,10 +264,10 @@ textarea:focus {
 #language-toggle {
   display: flex;
   gap: 10px;
-  margin: 10px;
-  justify-content: center;
   align-items: center;
 }
+
+
 
 #language-toggle button {
   background-color: #ff5733;
@@ -242,7 +276,7 @@ textarea:focus {
   font-weight: bold;
   border: none;
   cursor: pointer;
-  font-size: 0.6315rem;
+  font-size: 0.875rem;
   border-radius: 8px;
   transition: background 0.3s, transform 0.2s;
 }
